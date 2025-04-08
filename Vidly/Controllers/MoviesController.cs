@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -15,10 +16,19 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek" };
 
-            var viewResult = new ViewResult();
-            viewResult.ViewData.Model.ToString(); // don't mind to string. movie is assigned to .Model and View() takes care of that.
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Customer 1"},
+                new Customer { Name = "Customer 2"}
+            };
 
-            return View(movie);
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers,
+            };
+
+            return View(viewModel);
         }
 
         //[Route("movies/released/{year}/{month:regex(\\d{2):range(1, 12)}")] // for more constraints: ASP.NET MVC Attribute Route Contraints
