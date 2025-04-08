@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Vidly.Models;
 
 namespace Vidly.Controllers
@@ -14,16 +15,18 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek" };
 
+            var viewResult = new ViewResult();
+            viewResult.ViewData.Model.ToString(); // don't mind to string. movie is assigned to .Model and View() takes care of that.
+
             return View(movie);
-
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{2):range(1, 12)}")] // for more constraints: ASP.NET MVC Attribute Route Contraints
-        public ActionResult ByReleaseDate(int year, int month)
-        {
+        //[Route("movies/released/{year}/{month:regex(\\d{2):range(1, 12)}")] // for more constraints: ASP.NET MVC Attribute Route Contraints
+        //public ActionResult ByReleaseDate(int year, int month)
+        //{
 
-            return Content(year + "/" + month);
-        }
+        //    return Content(year + "/" + month);
+        //}
 
         //public ActionResult Edit(int id)
         //{
