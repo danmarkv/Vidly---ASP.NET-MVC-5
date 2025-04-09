@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    @Html.Partial("_NavBar", Model.Movie) @*assign a View parameter to prevent RandomMovieVM from being the default View*@
+    @Html.Partial("_NavBar") @*add , Model.Movie to the parameter to assign a View parameter to prevent RandomMovieVM from being the default View*@
     <div class="container body-content">
         @RenderBody()
         <hr />
