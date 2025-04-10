@@ -212,9 +212,30 @@
     <Compile Include="Migrations\202504101821420_PopulateBirthdatesToCustomerBirthdate.Designer.cs">
       <DependentUpon>202504101821420_PopulateBirthdatesToCustomerBirthdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504101938142_AddingNewPropertiesToMovies.cs" />
+    <Compile Include="Migrations\202504101938142_AddingNewPropertiesToMovies.Designer.cs">
+      <DependentUpon>202504101938142_AddingNewPropertiesToMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504101940372_CreatingGenreTableAndReferencingMoviesToGenre.cs" />
+    <Compile Include="Migrations\202504101940372_CreatingGenreTableAndReferencingMoviesToGenre.Designer.cs">
+      <DependentUpon>202504101940372_CreatingGenreTableAndReferencingMoviesToGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504101951352_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202504101951352_PopulateGenresTable.Designer.cs">
+      <DependentUpon>202504101951352_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504102014131_PopulateMoviesTable.cs" />
+    <Compile Include="Migrations\202504102014131_PopulateMoviesTable.Designer.cs">
+      <DependentUpon>202504102014131_PopulateMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504102052086_AddingRequiredToMovieNameAndGenreName.cs" />
+    <Compile Include="Migrations\202504102052086_AddingRequiredToMovieNameAndGenreName.Designer.cs">
+      <DependentUpon>202504102052086_AddingRequiredToMovieNameAndGenreName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -300,6 +321,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +380,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504101821420_PopulateBirthdatesToCustomerBirthdate.resx">
       <DependentUpon>202504101821420_PopulateBirthdatesToCustomerBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504101938142_AddingNewPropertiesToMovies.resx">
+      <DependentUpon>202504101938142_AddingNewPropertiesToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504101940372_CreatingGenreTableAndReferencingMoviesToGenre.resx">
+      <DependentUpon>202504101940372_CreatingGenreTableAndReferencingMoviesToGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504101951352_PopulateGenresTable.resx">
+      <DependentUpon>202504101951352_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504102014131_PopulateMoviesTable.resx">
+      <DependentUpon>202504102014131_PopulateMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504102052086_AddingRequiredToMovieNameAndGenreName.resx">
+      <DependentUpon>202504102052086_AddingRequiredToMovieNameAndGenreName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
