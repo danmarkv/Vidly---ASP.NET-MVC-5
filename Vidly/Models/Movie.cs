@@ -23,6 +23,7 @@ namespace Vidly.Models
         public byte StockAmount { get; set; }
 
         public Genre Genre { get; set; }
+        public byte GenreId { get; set; }
     }
 
     // /movies/random

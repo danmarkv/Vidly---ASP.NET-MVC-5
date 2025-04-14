@@ -24,10 +24,13 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        public ActionResult Save(Movie movie)  
+        public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0)
-                _context.Movies.Add(movie);
+            if (movie.Id == 0) 
+            { 
+            movie.DateAdded = DateTime.Now;
+            _context.Movies.Add(movie);
+            }
 
             else
             {
