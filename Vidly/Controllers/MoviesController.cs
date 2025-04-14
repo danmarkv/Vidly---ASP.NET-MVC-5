@@ -41,14 +41,33 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
+        public ActionResult NewMovie()
+        {
+            var genres = _context.Genres.ToList();
 
+            var viewModel = new NewMovieFormViewModel
+            {
+                Genres = genres,
+            };
 
-        //private IEnumerable<Movie> GetMovies()
-        //{
-        //    var movies = _context.Movies.Include(m => m.Genre).ToList();
+            return View("NewMovieForm", viewModel);
+        }
 
-        //    return movies;
-        //}
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            var viewModel = new NewMovieFormViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("NewMovieForm", viewModel);
+        }
 
         // GET: Movies/Random
         public ActionResult Random()
@@ -69,6 +88,14 @@ namespace Vidly.Controllers
 
             return View(viewModel);
         }
+
+        
+        //private IEnumerable<Movie> GetMovies()
+        //{
+        //    var movies = _context.Movies.Include(m => m.Genre).ToList();
+
+        //    return movies;
+        //}
 
         //[Route("movies/released/{year}/{month:regex(\\d{2):range(1, 12)}")] // for more constraints: ASP.NET MVC Attribute Route Contraints
         //public ActionResult ByReleaseDate(int year, int month)
