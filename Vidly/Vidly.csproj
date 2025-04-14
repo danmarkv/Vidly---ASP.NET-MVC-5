@@ -232,9 +232,9 @@
     <Compile Include="Migrations\202504102052086_AddingRequiredToMovieNameAndGenreName.Designer.cs">
       <DependentUpon>202504102052086_AddingRequiredToMovieNameAndGenreName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202504141411180_AddingGenreIdToTheMoviesTable.cs" />
-    <Compile Include="Migrations\202504141411180_AddingGenreIdToTheMoviesTable.Designer.cs">
-      <DependentUpon>202504141411180_AddingGenreIdToTheMoviesTable.cs</DependentUpon>
+    <Compile Include="Migrations\202504141506426_ChangeGenreIdToInt.cs" />
+    <Compile Include="Migrations\202504141506426_ChangeGenreIdToInt.Designer.cs">
+      <DependentUpon>202504141506426_ChangeGenreIdToInt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -408,8 +408,8 @@
     <EmbeddedResource Include="Migrations\202504102052086_AddingRequiredToMovieNameAndGenreName.resx">
       <DependentUpon>202504102052086_AddingRequiredToMovieNameAndGenreName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202504141411180_AddingGenreIdToTheMoviesTable.resx">
-      <DependentUpon>202504141411180_AddingGenreIdToTheMoviesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202504141506426_ChangeGenreIdToInt.resx">
+      <DependentUpon>202504141506426_ChangeGenreIdToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
