@@ -16,20 +16,20 @@ namespace Vidly.Models
 
         [Required]
         [Display(Name = "Release Date")]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         public DateTime DateAdded { get; set; }
 
         [Required]
         [Display(Name = "Number in Stock")]
         [Range(1,20)]
-        public byte StockAmount { get; set; }
+        public byte? StockAmount { get; set; }
 
         public Genre Genre { get; set; }
 
         [Required]
         [Display(Name = "Genre")]
-        public int GenreId { get; set; }
+        public int? GenreId { get; set; }
     }
 
     // /movies/random
