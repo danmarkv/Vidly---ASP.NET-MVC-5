@@ -24,12 +24,24 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        [HttpPost]
         public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0) 
-            { 
-            movie.DateAdded = DateTime.Now;
-            _context.Movies.Add(movie);
+            if (!ModelState.IsValid) 
+            {
+                var viewModel = new NewMovieFormViewModel()
+                {
+                    Movie = movie,
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("NewMovieForm", viewModel);
+            }
+            
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
             }
 
             else
