@@ -43,6 +43,10 @@ namespace Vidly.Controllers.API
                 return BadRequest();
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
+            if (customer == null)
+            {
+                throw new Exception("Mapping failed: customer is null.");
+            }
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
