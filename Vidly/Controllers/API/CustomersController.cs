@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AutoMapper;
+using System;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using AutoMapper;
-using Vidly.Models;
 using Vidly.Models.Dtos;
+using Vidly.Models;
 
-namespace Vidly.Controllers.API
+namespace Vidly.Controllers.Api
 {
     public class CustomersController : ApiController
     {
@@ -18,6 +15,7 @@ namespace Vidly.Controllers.API
         {
             _context = new ApplicationDbContext();
         }
+
         // GET /api/customers
         public IHttpActionResult GetCustomers()
         {
@@ -37,23 +35,18 @@ namespace Vidly.Controllers.API
             return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
 
-        // POST /api/customers/
+        // POST /api/customers
         [HttpPost]
-        public IHttpActionResult CreateCustomer(CustomerDto customerDto) 
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
-            if (customer == null)
-            {
-                throw new Exception("Mapping failed: customer is null.");
-            }
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            customerDto.Id = customer.Id; ;
-
+            customerDto.Id = customer.Id;
             return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
         }
 
@@ -70,13 +63,13 @@ namespace Vidly.Controllers.API
                 return NotFound();
 
             Mapper.Map(customerDto, customerInDb);
-            
+
             _context.SaveChanges();
 
             return Ok();
         }
 
-        // DELETE /api/customer/1
+        // DELETE /api/customers/1
         [HttpDelete]
         public IHttpActionResult DeleteCustomer(int id)
         {
