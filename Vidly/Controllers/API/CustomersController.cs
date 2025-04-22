@@ -7,6 +7,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers.Api
 {
+    [RoutePrefix("api/customers")]
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
@@ -25,6 +26,7 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers/1
+        [Route("{id}")]
         public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -52,6 +54,7 @@ namespace Vidly.Controllers.Api
 
         // PUT /api/customers/1
         [HttpPut]
+        [Route("{id}")]
         public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
@@ -71,8 +74,11 @@ namespace Vidly.Controllers.Api
 
         // DELETE /api/customers/1
         [HttpDelete]
+        [Route("{id:int}")]
         public IHttpActionResult DeleteCustomer(int id)
         {
+            
+
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
@@ -83,5 +89,7 @@ namespace Vidly.Controllers.Api
 
             return Ok();
         }
+
+       
     }
 }

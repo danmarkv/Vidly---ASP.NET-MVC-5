@@ -22,6 +22,12 @@
 }
 else
 {
+    <ul>
+        @foreach (var customer in Model)
+        {
+            <li>Customer ID: @customer.Id - @customer.Name</li>
+        }
+    </ul>
     <table id="customers" class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -48,7 +54,7 @@ else
 {
     <script>
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
+            $(".js-delete").on("click", function () {
                 var button = $(this);
 
                 if (confirm("Are you sure you want to delete this customer?")) {
