@@ -10,11 +10,11 @@ namespace Vidly
         {
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                           "~/Scripts/jquery-{version}.js",
-                          "~/Scripts/bootstrap4.js",
+                          "~/Scripts/bootstrap.js",
                           "~/Scripts/bootbox.js",
                           "~/Scripts/respond.js",
                           "~/Scripts/datatables/jquery.datatables.js",
-                          "~/Scripts/datatables/datatables.bootstrap4.js"
+                          "~/Scripts/datatables/datatables.bootstrap.js"
                           ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -25,14 +25,23 @@ namespace Vidly
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new Bundle("~/bundles/bootstrap4").Include(
-                      ));
-                      
+            //bundles.Add(new Bundle("~/bundles/bootstrap").Include(
+            //          ));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-lumen.css",
-                      "~/content/datatables/css/datatables.bootstrap4.css",
-                      "~/Content/site.css"));
+                        // Core Bootstrap 3 CSS:
+                        "~/Content/bootstrap.css",
+
+                        // Then your Lumen theme on top of it:
+                        "~/Content/bootstrap-lumen.css",
+
+                        // DataTables skin for Bootstrap 3:
+                        "~/Content/datatables/css/datatables.bootstrap.css",
+
+                        // Your custom site overrides:
+                        "~/Content/site.css"
+                    ));
         }
     }
 }
