@@ -20,7 +20,6 @@ namespace Vidly.Controllers.API
             _context = new ApplicationDbContext();
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public IEnumerable<MovieDto> GetMovies()
         {
             return _context.Movies
@@ -29,7 +28,6 @@ namespace Vidly.Controllers.API
                 .Select(Mapper.Map<Movie, MovieDto>);
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
