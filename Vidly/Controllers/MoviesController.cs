@@ -129,40 +129,6 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
-        
-        //private IEnumerable<Movie> GetMovies()
-        //{
-        //    var movies = _context.Movies.Include(m => m.Genre).ToList();
-
-        //    return movies;
-        //}
-
-        //[Route("movies/released/{year}/{month:regex(\\d{2):range(1, 12)}")] // for more constraints: ASP.NET MVC Attribute Route Contraints
-        //public ActionResult ByReleaseDate(int year, int month)
-        //{
-
-        //    return Content(year + "/" + month);
-        //}
-
-        //public ActionResult Edit(int id)
-        //{
-        //    return Content("id=" + id);
-        //}
-
-        //// movies
-        //public ActionResult Index(int? pageIndex, string sortBy)
-        //{
-        //    if (!pageIndex.HasValue)
-        //    {
-        //        pageIndex = 1;
-        //    }
-
-        //    if (String.IsNullOrEmpty(sortBy))
-        //    {
-        //        sortBy = "Name";
-        //    }
-
-        //    return Content(String.Format("pageIndex={0} & sortBy={1}", pageIndex, sortBy));
-        //}
+        // for more constraints: ASP.NET MVC Attribute Route Contraints
     }
 }
