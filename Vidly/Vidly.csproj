@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
+    <Compile Include="Controllers\API\NewRentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -309,6 +310,7 @@
     <Compile Include="Models\Dtos\GenreDto.cs" />
     <Compile Include="Models\Dtos\MembershipTypeDto.cs" />
     <Compile Include="Models\Dtos\MovieDto.cs" />
+    <Compile Include="Models\Dtos\NewRentalDto.cs" />
     <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
