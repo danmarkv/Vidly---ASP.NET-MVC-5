@@ -305,6 +305,10 @@
     <Compile Include="Migrations\202505050631223_AddRental.Designer.cs">
       <DependentUpon>202505050631223_AddRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505050703597_AddAmountAvailableToMovie.cs" />
+    <Compile Include="Migrations\202505050703597_AddAmountAvailableToMovie.Designer.cs">
+      <DependentUpon>202505050703597_AddAmountAvailableToMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -645,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505050631223_AddRental.resx">
       <DependentUpon>202505050631223_AddRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505050703597_AddAmountAvailableToMovie.resx">
+      <DependentUpon>202505050703597_AddAmountAvailableToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,6 +25,8 @@ namespace Vidly.Models
         [Range(1,20)]
         public byte? StockAmount { get; set; }
 
+        public byte AmountAvailable { get; set; }
+
         public Genre Genre { get; set; }
 
         [Required]
