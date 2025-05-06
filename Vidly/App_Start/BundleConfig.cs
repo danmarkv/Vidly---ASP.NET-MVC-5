@@ -15,7 +15,8 @@ namespace Vidly
                           "~/Scripts/respond.js",
                           "~/Scripts/datatables/jquery.datatables.js",
                           "~/Scripts/datatables/datatables.bootstrap.js",
-                          "~/scripts/typeahead.bundle.js"
+                          "~/scripts/typeahead.bundle.js",
+                          "~/scripts/toastr.js"
                           ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -40,6 +41,7 @@ namespace Vidly
                         // DataTables skin for Bootstrap 3:
                         "~/Content/datatables/css/datatables.bootstrap.css",
                         "~/Content/typeahead.css",
+                        "~/content/toastr.css",
                         // Your custom site overrides:
                         "~/Content/site.css"
                     ));
