@@ -25,7 +25,10 @@ namespace Vidly.Controllers.API
         {
             var customer = _context.Customers.Single(c => c.Id == newRental.CustomerId);
 
-            var movies = _context.Movies.Where(m => newRental.MovieIds.Contains(m.Id)).ToList();
+            var movies = _context.Movies
+                .Where(m => newRental.MovieIds
+                .Contains(m.Id))
+                .ToList();
 
             foreach (var movie in movies)
             {
@@ -40,6 +43,8 @@ namespace Vidly.Controllers.API
                     Movie = movie,
                     DateRented = DateTime.Now,
                 };
+
+                _context.Rentals.Add(rental);
             }
 
             _context.SaveChanges();
@@ -47,14 +52,5 @@ namespace Vidly.Controllers.API
             return Ok();
         }
 
-        //public IHttpActionResult GetCustomer(int id)
-        //{
-        //    var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-
-        //    if (customer == null) 
-        //        return NotFound();
-
-        //    return Ok(Mapper.Map<Customer, CustomerDto>(customer));
-        //}
     }
 }
