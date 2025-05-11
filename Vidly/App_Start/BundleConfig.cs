@@ -37,6 +37,7 @@ namespace Vidly
 
                         // Then your Lumen theme on top of it:
                         "~/Content/bootstrap-lumen.css",
+                        "~/Content/bootstrap-theme.css",
 
                         // DataTables skin for Bootstrap 3:
                         "~/Content/datatables/css/datatables.bootstrap.css",
